@@ -1,0 +1,13 @@
+{
+    "name": "ebay-demo",
+    "version": "v0.0.1",
+    "private": true,
+    "scripts": {
+        "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
+        "start:frontend": "cd frontend && npm run start",
+        "start:backend": "cd backend && npm run start"
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    }
+}
