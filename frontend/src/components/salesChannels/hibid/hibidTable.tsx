@@ -20,7 +20,7 @@ const SalesChannelHibid: React.FC = () => {
       </Paper>
       <Paper sx={{ backgroundColor: 'white', marginTop: 1, }}>
         <Typography variant="h6" sx={{ margin: 0, paddingTop: 0, height: '15px' }}>Selected Items for Auction</Typography>
-        <AuctionEntry sx={{ marginTop: 4, marginBottom: 0,}}/>
+        <AuctionEntry sx={{ marginTop: 4, marginBottom: 0,}} />
         <LowerTable selectedItems={selectedItems} />
       </Paper>
     </Box>

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useMemo, useCallback } from 'react';
-import { Box, Toolbar, Typography, Switch, Button } from '@mui/material';
+import { Box, Toolbar, Typography, Switch, Button, TextField } from '@mui/material';
 import { AgGridReact } from 'ag-grid-react';
 import { ColDef, GridOptions, ValueFormatterParams, SelectionChangedEvent, FirstDataRenderedEvent } from 'ag-grid-community';
 import 'ag-grid-community/styles/ag-grid.css';
@@ -11,6 +11,7 @@ import CheckboxCellRenderer from './CheckboxCellRenderer';
 
 interface UpperTableProps {
   onSelectionChange: (selectedItems: Item[]) => void;
+  onInput?: any;
 }
 
 const UpperTable: React.FC<UpperTableProps> = ({ onSelectionChange }) => {
@@ -112,6 +113,7 @@ const UpperTable: React.FC<UpperTableProps> = ({ onSelectionChange }) => {
         <Button variant="contained" color="secondary" onClick={deselectAll}>
           Deselect All
         </Button>
+        <TextField id="filled-basic" label="Search" variant="filled" />
       </Toolbar>
       <Box className="ag-grid-theme-builder" sx={{ height: 400, width: '100%' }}>
         <AgGridReact<Item>

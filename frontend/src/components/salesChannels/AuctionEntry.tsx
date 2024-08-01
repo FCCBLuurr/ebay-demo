@@ -1,18 +1,20 @@
 import React from 'react';
-import { Box, Grid, TextField, Paper, SxProps } from '@mui/material';
+import { Box, Grid, TextField, Paper, SxProps, InputAdornment } from '@mui/material';
 import Item from '../../types/items';
 import CustomButton from '../blocks/CustomButton';
 
 interface AuctionEntryProps {
     data?: string;
     itemsToUpdate?: Item[];
-    sx?: SxProps; 
+    sx?: SxProps;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 interface EntryBoxProps {
     label: string;
     id: string;
     variant: "filled" | "standard" | "outlined";
+    InputAdornmentText?: string;
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -21,6 +23,7 @@ const EntryBox: React.FC<EntryBoxProps> = ({
     id,
     variant,
     onChange,
+    InputAdornmentText,
     ...rest
 }) => {
     return (
@@ -29,6 +32,9 @@ const EntryBox: React.FC<EntryBoxProps> = ({
             id={id}
             variant={variant}
             onChange={onChange}
+            InputProps={{
+                startAdornment:<InputAdornment position="start">{InputAdornmentText}</InputAdornment>
+            }}
             sx={{
                 marginBottom: 1,
                 width: '100%',
@@ -54,6 +60,7 @@ const AuctionEntry: React.FC<AuctionEntryProps> = ({
                             label="Auction Name"
                             id="auction_name"
                             variant="filled"
+                            InputAdornmentText='Name of Auction on HiBid'
                         />
                     </Grid>
                     <Grid item xs={12} sm={6} md={4} lg={3}>
@@ -61,6 +68,7 @@ const AuctionEntry: React.FC<AuctionEntryProps> = ({
                             label="Auction ID"
                             id="auction_id"
                             variant="filled"
+                            InputAdornmentText='Numbers Only'
                         />
                     </Grid>
                 </Grid>
