@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import Inventory from './pages/Inventory';
 import DataEntry from './pages/DataEntry';
 import SalesChannelHibid from './pages/SalesChannelHibid';
+import SalesChannelEbay from './pages/SalesChannelEbay';
 
 const App: React.FC = () => {
   return (
@@ -20,6 +21,7 @@ const App: React.FC = () => {
           <Route path="/inventory" element={<Inventory />} />
           <Route path="/dataentry" element={<DataEntry />} />
           <Route path="/saleschannels/hibid" element={<SalesChannelHibid />} />
+          <Route path="/saleschannels/ebay" element={<SalesChannelEbay />} />
         </Routes>
       </Router>
     </ThemeProvider>
